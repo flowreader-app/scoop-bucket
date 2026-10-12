@@ -13,14 +13,14 @@
     "THE MSI IS UNSIGNED. The project holds no Authenticode certificate, so build-windows.yml",
     "(packaging/release-repo/) records the windows artifact as signatureStatus: unsigned. Scoop itself does not care",
     "-- it verifies the download by SHA-256, which is what `hash` below is -- but Windows",
-    "does: SmartScreen shows an 'unrecognized app' prompt the first time FlowReader.exe",
+    "does: SmartScreen shows an 'unrecognized app' prompt the first time flowreader.exe",
     "runs. The `notes` field says so to the user at install time.",
     "",
-    "UNVERIFIED: `extract_dir`. Scoop extracts an .msi with msiexec /a (or lessmsi), and",
-    "the Tauri/WiX admin image is expected to put the payload under a folder named after",
-    "the product. Nobody has run this. Confirm on the first real install with",
-    "`msiexec /a FlowReader-windows-<v>-x64.msi /qn TARGETDIR=C:\\tmp\\fr` and correct this",
-    "key if the tree differs."
+    "`extract_dir`: Scoop extracts an .msi with msiexec /a (or lessmsi) into SourceDir, and",
+    "the Tauri/WiX admin image puts the payload under PFiles\\FlowReader (ProgramFiles64Folder",
+    "is PFiles in an admin image). Check with `msiextract -l <msi>` (Homebrew msitools): it",
+    "lists PFiles/FlowReader/flowreader.exe. 1.0.0 shipped with `FlowReader` here and failed",
+    "with \"Could not find 'FlowReader'! (error 16)\"."
   ],
   "version": "1.0.0",
   "description": "Read faster while maintaining comprehension. A distraction-free reading app with pacing aids.",
@@ -36,11 +36,11 @@
     "64bit": {
       "url": "https://get.flowreader.io/r/v1.0.0/windows-msi?src=scoop#/FlowReader-windows-1.0.0-x64.msi",
       "hash": "5dbe77d29291d74745f063adf8ba6106724f9a40f93048fac58fef8126fdae9c",
-      "extract_dir": "FlowReader"
+      "extract_dir": "PFiles\\FlowReader"
     }
   },
-  "bin": "FlowReader.exe",
-  "shortcuts": [["FlowReader.exe", "FlowReader"]],
+  "bin": "flowreader.exe",
+  "shortcuts": [["flowreader.exe", "FlowReader"]],
   "checkver": {
     "github": "https://github.com/flowreader-app/flowreader"
   },
