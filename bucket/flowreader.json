@@ -6,8 +6,8 @@
     "MSI is downloaded through the download counter (get.flowreader.io/r/, infra/download-worker),",
     "which counts the install and redirects to the public release repository",
     "flowreader-app/flowreader. The `#/<file>.msi` fragment names the downloaded file for",
-    "Scoop (it is never sent to the server); without it the query string would. 1.2.2 and",
-    "b0c249c1e0e7380ba41086e9d43fabbac9b57f8b957337202d12d38090198c83 come from that manifest, the same record the delivery gate checks",
+    "Scoop (it is never sent to the server); without it the query string would. 1.2.3 and",
+    "f580e9bc5cb198b2aa421547e25b6274b3cf2f8f99a4a4a0cd70bad844877b33 come from that manifest, the same record the delivery gate checks",
     "the MSI bytes against.",
     "",
     "THE MSI IS UNSIGNED. The project holds no Authenticode certificate, so build-windows.yml",
@@ -22,7 +22,7 @@
     "lists PFiles/FlowReader/flowreader.exe. 1.0.0 shipped with `FlowReader` here and failed",
     "with \"Could not find 'FlowReader'! (error 16)\"."
   ],
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Read faster while maintaining comprehension. A distraction-free reading app with pacing aids.",
   "homepage": "https://flowreader.io/",
   "license": "Proprietary",
@@ -34,8 +34,8 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://get.flowreader.io/r/v1.2.2/windows-msi?src=scoop#/FlowReader-windows-1.2.2-x64.msi",
-      "hash": "b0c249c1e0e7380ba41086e9d43fabbac9b57f8b957337202d12d38090198c83",
+      "url": "https://get.flowreader.io/r/v1.2.3/windows-msi?src=scoop#/FlowReader-windows-1.2.3-x64.msi",
+      "hash": "f580e9bc5cb198b2aa421547e25b6274b3cf2f8f99a4a4a0cd70bad844877b33",
       "extract_dir": "PFiles\\FlowReader"
     }
   },
